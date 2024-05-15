@@ -47,7 +47,7 @@ header{
 }
     nav{
         display: flex;
-        align-items: end;
+        align-items: center;
     }
     nav a{
         margin-right: 15px;
@@ -274,7 +274,6 @@ header{
 
 footer{
     background-color: hsl(243, 87%, 12%);
-    height: 400px;
     color: white;
     display: flex;
     flex-direction: column;
@@ -291,8 +290,17 @@ footer{
         flex-direction: row;
         justify-content: space-between;
         margin-top: 15px;
+        padding-right: 50px;
     }
-
+    .footer_socials img{
+        width: 30px;
+        height: 30px;
+        margin-right: 20px;
+    }
+    .footer_socials img:hover{
+        background-color: hsl(243, 87%, 12%);
+        cursor: pointer;
+    }
     .f-link{
         display: flex;
         flex-direction: column;
@@ -338,7 +346,7 @@ footer{
         }
     }
     @media screen and (max-width:830px){
-        header, .section1, .section2, .section3{
+        header, footer, .section1, .section2, .section3{
             padding-inline: 10vw;
             gap: 5%;
         }
@@ -357,6 +365,16 @@ footer{
         .section3_right input{
             margin-bottom: 0;
         }
+
+        .links{
+            flex-direction: column;
+            padding: 0px;
+        }
+        .footer_socials{
+            display: flex;
+            flex-direction: row;
+            align-self: center;
+        }
     }
 
     @media screen and (max-width:700px){
@@ -373,7 +391,7 @@ footer{
             flex-direction: column-reverse;
             text-align: center;
         }
-        .section2_left, .section1_right {
+        .section2_left, .section1_right, .section2_right {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -386,12 +404,5 @@ footer{
         .section1_right img, .section2_right{
             width: 70%;
             margin-bottom: 50px;
-        }
-    }
-
-    @media screen and (max-width:400px){
-        #logo{
-            width: 66px;
-            height: 19px;
         }
     }
