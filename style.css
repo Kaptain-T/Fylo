@@ -12,10 +12,15 @@
 }
 
 a{
+    position: relative;
     text-decoration: none;
     color: inherit;
 }
-
+a img{
+    position:absolute;
+    top: 5px;
+    right: -1px;
+}
 h2,
 h3,
 header,
@@ -40,9 +45,12 @@ header{
     padding-inline: 70px;
     padding-block: 30px;
 }
-
+    nav{
+        display: flex;
+        align-items: end;
+    }
     nav a{
-        margin-inline: 15px;
+        margin-right: 15px;
     }
 
 /* ----------------------------------- SECTION 1 -------------------------------------- */
@@ -53,7 +61,7 @@ header{
     padding-inline: 80px;
     align-items: center;
     margin-bottom: 80px;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
 }
 
 /* -------LEFT SIDE ----------- */
@@ -116,7 +124,8 @@ header{
     align-items: center;
     background-color: hsl(240, 75%, 98%);
     background-size: contain;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
+    height: fit-content;
 }
 
 /* -------LEFT SIDE ----------- */
@@ -132,6 +141,15 @@ header{
     .section2_left > p {
         width: 70%;
         margin-bottom: 15px;
+    }
+
+    .section2_left > a{
+        border-bottom: 1px solid hsl(170, 45%, 43%);
+        padding-right: 20px;
+        color: hsl(170, 45%, 43%);
+    }
+    .section2_left > a:hover{
+        color: hsl(170, 55%, 60%);
     }
 
     .testimonialBox{
@@ -194,7 +212,6 @@ header{
     padding: 50px 80px 50px 80px;
     background-color: hsl(238, 22%, 44%);
     align-items: center;
-    flex-wrap: wrap;
     height: 300px;
 }
     .section3_left{
@@ -276,4 +293,83 @@ footer{
 
     .f-link a:hover{
         color:blue;
+    }
+
+
+    @media screen and (max-width:1250px){
+        .section3 {
+            gap: 10%;
+        }
+
+        .section3_left, .section3_right {
+            padding-inline: 0;
+        }
+    }
+    @media screen and (max-width:1032px) {
+        .section1, .section2{
+            gap: 10%;
+        }
+
+        .section1_left, .section2_left, .section3_left, .section1_right, .section2_right, .section3_right {
+            flex: 45%;
+        }
+        .section1_right img, .section2_right img{
+            min-width: 300px;
+        }
+        .section1_left input, .section1_left button, .section1_left h2, .section1_left p, .section2_left p, .section2_left h2, .section3_right input, .section3_right button{
+            width: 100%;
+            margin-bottom: 10px;
+            margin-left: 0;
+        }
+
+        .section1_right > img, .section2_right > img {
+            width: 100%;
+        }
+    }
+    @media screen and (max-width:830px){
+        header, .section1, .section2, .section3{
+            padding-inline: 40px;
+            gap: 5%;
+        }
+        .section2 {
+            background-image: url(./images/bg-curve-mobile.svg);
+        }
+        .section3{
+            flex-direction: column;
+            height: fit-content;
+        }
+        .section3_right{
+            width: 100%;
+            margin-top: 10px;
+            height: fit-content;
+        }
+        .section3_right input{
+            margin-bottom: 0;
+        }
+    }
+
+    @media screen and (max-width:700px){
+        #logo{
+            width: 99px;
+            height: 29px;
+        }
+        nav a{
+            margin-right: 10px;
+        }
+        .section1, .section2{
+            display: flex;
+            align-items: center;
+            flex-direction: column-reverse;
+            text-align: center;
+        }
+        .section2_left{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .section1_right img{
+            width: 60%;
+            margin-bottom: 50px;
+        }
     }
