@@ -1,6 +1,6 @@
 /* ---------------------------------- GLOBAL -------------------------------------- */
-@import url(https://fonts.google.com/specimen/Open+Sans);
-@import url(https://fonts.google.com/specimen/Raleway);
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 *{
     padding: 0;
@@ -18,7 +18,7 @@ a{
 }
 a img{
     position:absolute;
-    top: 5px;
+    top: 4px;
     right: -1px;
 }
 h2,
@@ -51,6 +51,17 @@ header{
     }
     nav a{
         margin-right: 15px;
+    }
+
+    nav a:hover{
+        color:  hsl(224, 93%, 58%);
+        border-bottom: 2px solid  hsl(224, 93%, 58%);
+
+    }
+
+    
+    #logo:hover {
+        transform: scaleX(1.2);
     }
 
 /* ----------------------------------- SECTION 1 -------------------------------------- */
@@ -316,7 +327,7 @@ footer{
         .section1_right img, .section2_right img{
             min-width: 300px;
         }
-        .section1_left input, .section1_left button, .section1_left h2, .section1_left p, .section2_left p, .section2_left h2, .section3_right input, .section3_right button{
+        .section1_left input, .section1_left button, .section1_left h2, .section1_left p, .section2_left > p, .section2_left h2, .section3_right input, .section3_right button{
             width: 100%;
             margin-bottom: 10px;
             margin-left: 0;
@@ -328,7 +339,7 @@ footer{
     }
     @media screen and (max-width:830px){
         header, .section1, .section2, .section3{
-            padding-inline: 40px;
+            padding-inline: 10vw;
             gap: 5%;
         }
         .section2 {
@@ -362,14 +373,25 @@ footer{
             flex-direction: column-reverse;
             text-align: center;
         }
-        .section2_left{
+        .section2_left, .section1_right {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        .section1_right img{
-            width: 60%;
+        .testimonialBox{
+            text-align: left;
+        }
+
+        .section1_right img, .section2_right{
+            width: 70%;
             margin-bottom: 50px;
+        }
+    }
+
+    @media screen and (max-width:400px){
+        #logo{
+            width: 66px;
+            height: 19px;
         }
     }
